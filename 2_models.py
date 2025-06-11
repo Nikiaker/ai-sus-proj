@@ -82,14 +82,14 @@ def evaluate_models(data, target):
     models = {
         "Linear Regression": LinearRegression(),
         "XGBoost": XGBRegressor(objective="reg:squarederror", n_estimators=100),
-        "MLPRegressor": MLPRegressor(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
+        #"MLPRegressor": MLPRegressor(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
     }
 
     # Definicja metryk
     scoring = {
         "MAE": make_scorer(mean_absolute_error),
         "MSE": make_scorer(mean_squared_error),
-        #"R2": make_scorer(r2_score)
+        "R2": make_scorer(r2_score)
     }
 
     # 10-Fold Cross Validation
